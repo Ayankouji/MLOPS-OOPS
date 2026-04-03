@@ -18,9 +18,9 @@ class chatbook:
         elif user_input == "2":
             self.sigin()
         elif user_input == "3":
-            pass
+            self.my_post()
         elif user_input == "4":
-            pass
+            self.sendmsg()
         else:
             exit()
 
@@ -48,6 +48,25 @@ class chatbook:
         print("\n")
         self.menu()
 
+    def my_post(self):
+        if self.loggedin == True:
+            txt = input("What do you want to post? ")
+            print(f"Following content has been posted {txt}")
+        else:
+            print("You need to do Signin first to post something ")
+        print("\n")
+        self.menu()
+
+    def sendmsg(self):
+        if self.loggedin == True:
+            txt = input("Enter your message here ")
+            frd = input("Whom to send the message to? ")
+            print(f"Your message {txt} has been sent to {frd} ")
+        else:
+            print("You need to do Signin first to send message ")
+            print("\n")
+            self.menu()
+            
 
 
-sam = chatbook()
+# sam = chatbook()
